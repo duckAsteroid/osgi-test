@@ -1,0 +1,16 @@
+description = 'Underworld Album Data : OSGi service implementation'
+
+dependencies {
+    compile 'org.osgi:org.osgi.core:4.+'
+    compile 'commons-io:commons-io:2.4'
+    compile project(':underworld-service-api')
+}
+
+jar {
+    manifest {
+        instructionReplace 'Bundle-Activator', 'com.asteroid.duck.osgi.example.underworld.impl.Activator'
+        instructionReplace 'Bundle-Name', "$project.description"
+        instructionReplace 'Private-Package', 'com.asteroid.duck.example.impl'
+    }
+}
+

@@ -1,0 +1,8 @@
+description = 'Underworld Album Data : OSGi service API'
+
+jar {
+    manifest {
+        instructionReplace 'Bundle-Name', "$project.description"
+    }
+}
+

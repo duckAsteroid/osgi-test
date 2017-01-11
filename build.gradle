@@ -1,3 +1,7 @@
+plugins {
+    id "com.jfrog.bintray" version "1.7"
+}
+
 allprojects {
     group = 'com.asteroid.duck.osgi.test'
     version = '1.0.0'
@@ -16,6 +20,35 @@ subprojects {
 
     dependencies {
         testCompile 'junit:junit:4.+'
+    }
+
+
+    // publish to Maven
+    publishing {
+        publications {
+            maven(MavenPublication) {
+                from components.java
+            }
+        }
+    }
+
+    bintray {
+        user = 'duckasteroid'
+        key = "$System.env.BINTRAY_KEY"
+        pkg {
+            repo = 'maven'
+            name = project.name
+            userOrg = 'osgi-test'
+            licenses = ['MIT']
+            vcsUrl = 'https://github.com/duckAsteroid/osgi-test.git'
+            version {
+                name = "$project.version"
+                released = new Date()
+                vcsTag = "$project.version"
+            }
+        }
+        publish = true
+        publications = ['maven']
     }
 }
 

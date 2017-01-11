@@ -1,2 +1,2 @@
-include ':example-service-api'
-include ':example-service-impl'
+include ':underworld-service-api'
+include ':underworld-service-impl'
