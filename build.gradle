@@ -1,0 +1,18 @@
+group = 'com.asteroid.duck'
+version = '1.0.0-SNAPSHOT'
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'maven-publish'
+
+    repositories {
+        mavenCentral()
+        mavenLocal()
+    }
+
+    dependencies {
+        testCompile 'junit:junit:4.+'
+    }
+}
+
+

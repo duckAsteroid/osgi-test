@@ -1,0 +1,17 @@
+description = 'Example OSGi service API'
+
+jar {
+    manifest {
+        instructionReplace 'Bundle-Name', "$project.description"
+    }
+}
+
+// publish API and IMPL to Maven
+publishing {
+    publications {
+        api(MavenPublication) {
+            artifactId 'osgi-example-service-api'
+            from components.java
+        }
+    }
+}
