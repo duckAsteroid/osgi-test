@@ -6,7 +6,7 @@ jar {
     }
 }
 
-// publish API and IMPL to Maven
+// publish API to Maven
 publishing {
     publications {
         api(MavenPublication) {

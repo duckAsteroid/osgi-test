@@ -4,6 +4,7 @@ description = 'Example OSGi service implementation'
 dependencies {
     compile 'org.osgi:org.osgi.core:4.+'
     compile 'commons-io:commons-io:2.4'
+    compile project(':example-service-api')
 }
 
 jar {
@@ -17,8 +18,9 @@ jar {
 // publish API and IMPL to Maven
 publishing {
     publications {
-        impl(MavenPublication) {
+        maven(MavenPublication) {
             artifactId 'osgi-example-service-impl'
+            groupId project.group
             from components.java
         }
     }
