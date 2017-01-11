@@ -1,6 +1,6 @@
 language: java
 
-script: ./gradlew --stacktrace --info :core:bintrayUpload :gradle-plugin:bintrayUpload
+script: ./gradlew --stacktrace --info :example-service-api:bintrayUpload :example-service-impl:bintrayUpload
 
 jdk:
   - oraclejdk8
