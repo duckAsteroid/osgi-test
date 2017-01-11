@@ -1,4 +1,9 @@
+plugins {
+    id "com.jfrog.bintray" version "1.7"
+}
+
 description = 'Underworld Album Data : OSGi service API'
+
 
 jar {
     manifest {
@@ -6,3 +11,21 @@ jar {
     }
 }
 
+bintray {
+    user = 'duckasteroid'
+    key = "$System.env.BINTRAY_KEY"
+    pkg {
+        repo = 'maven'
+        name = project.name
+        userOrg = 'osgi-test'
+        licenses = ['MIT']
+        vcsUrl = 'https://github.com/duckAsteroid/osgi-test.git'
+        version {
+            name = "$project.version"
+            released = new Date()
+            vcsTag = "$project.version"
+        }
+    }
+    publish = true
+    publications = ['maven']
+}
