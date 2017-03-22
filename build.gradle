@@ -2,9 +2,14 @@ plugins {
     id "com.jfrog.bintray" version "1.7"
 }
 
+ext {
+    BuildNumber = System.getenv("TRAVIS_BUILD_NUMBER") ?: "X"
+}
+
 allprojects {
     group = 'com.asteroid.duck.osgi.test'
-    version = '1.0.0'
+    version = "1.0.${BuildNumber}"
+    println "${project.name}:${project.version}"
 }
 
 subprojects {
