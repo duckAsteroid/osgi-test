@@ -1,7 +1,3 @@
-plugins {
-    id "com.jfrog.bintray" version "1.7"
-}
-
 description = 'Underworld Album Data : OSGi service implementation'
 
 dependencies {

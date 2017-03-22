@@ -1,4 +1,6 @@
-
+plugins {
+    id "com.jfrog.bintray" version "1.7"
+}
 
 allprojects {
     group = 'com.asteroid.duck.osgi.test'
@@ -6,7 +8,7 @@ allprojects {
 }
 
 subprojects {
-
+    apply plugin: 'com.jfrog.bintray'
     apply plugin: 'java'
     apply plugin: 'osgi'
     apply plugin: 'maven-publish'
@@ -20,7 +22,6 @@ subprojects {
         testCompile 'junit:junit:4.+'
     }
 
-
     // publish to Maven
     publishing {
         publications {
@@ -29,8 +30,15 @@ subprojects {
             }
         }
     }
-
-
 }
+
+task bintrayUploadAll {
+    group 'publishing'
+    description 'Call :bintrayUpload on all subprojects'
+    subprojects.each {
+        dependsOn("${it.path}:bintrayUpload")
+    }
+}
+
 
 

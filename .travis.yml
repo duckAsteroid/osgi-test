@@ -1,5 +1,5 @@
 language: java
-script: "./gradlew --stacktrace --info :underworld-service-api:bintrayUpload :underworld-service-impl:bintrayUpload"
+script: "./gradlew --stacktrace --info :bintrayUploadAll"
 jdk:
   - oraclejdk8
 before_cache:
