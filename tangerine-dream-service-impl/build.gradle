@@ -2,7 +2,7 @@ plugins {
     id "com.jfrog.bintray" version "1.7"
 }
 
-description = 'Underworld Album Data : OSGi service implementation'
+description = 'Tangerine Dream Album Data : OSGi service implementation'
 
 dependencies {
     compile 'org.osgi:org.osgi.core:4.+'

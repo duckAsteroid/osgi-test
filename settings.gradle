@@ -1,2 +1,4 @@
-include ':underworld-service-api'
+include ':album-service-api'
+include ':album-service-impl'
 include ':underworld-service-impl'
+include ':tangerine-dream-service-impl'

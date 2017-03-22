@@ -2,18 +2,16 @@ plugins {
     id "com.jfrog.bintray" version "1.7"
 }
 
-description = 'Underworld Album Data : OSGi service implementation'
+description = 'Album Data : Implementation libraries'
 
 dependencies {
-    compile 'org.osgi:org.osgi.core:4.+'
-    compile project(':album-service-impl')
+    compile project(":album-service-api")
+    compile 'commons-io:commons-io:2.4'
 }
 
 jar {
     manifest {
-        instructionReplace 'Bundle-Activator', 'com.asteroid.duck.osgi.example.underworld.impl.Activator'
         instructionReplace 'Bundle-Name', "$project.description"
-        instructionReplace 'Private-Package', 'com.asteroid.duck.osgi.example.underworld.impl'
     }
 }
 

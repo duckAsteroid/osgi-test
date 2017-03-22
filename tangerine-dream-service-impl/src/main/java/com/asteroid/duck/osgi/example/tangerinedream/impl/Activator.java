@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2017 Ford Motor Co.
  */
-package com.asteroid.duck.osgi.example.underworld.impl;
+package com.asteroid.duck.osgi.example.tangerinedream.impl;
 
 import com.asteroid.duck.osgi.example.album.AlbumInfoService;
 import com.asteroid.duck.osgi.example.album.impl.AlbumInfoServiceImpl;
